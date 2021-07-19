@@ -1,0 +1,17 @@
+import { AfterViewInit, Component, EventEmitter, OnInit, Output } from "@angular/core";
+import { HAMMER_LOADER } from "@angular/platform-browser";
+
+
+@Component({
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+})
+
+export class HeaderComponent {
+@Output() featureSelected = new EventEmitter<string>();
+
+onSelect(feature: string) {
+    this.featureSelected.emit(feature);
+}
+}
+
