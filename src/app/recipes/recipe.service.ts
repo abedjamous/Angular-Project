@@ -21,7 +21,7 @@ export class RecipeService {
           'https://vilas.extension.wisc.edu/files/2013/12/Recipes-Title.png',
           [
             new Ingredient('Buns', 2),
-              new Ingredient('chees', 2)
+              new Ingredient('cheese', 2)
           ])
       ];
 
@@ -32,6 +32,10 @@ export class RecipeService {
 
       getRecipes() {
           return this.recipes.slice();
+      }
+
+      getRecipe(index: number) {
+        return this.recipes[index]
       }
 
       addIngredientsToShoppingList(ingredients: Ingredient[]) {
