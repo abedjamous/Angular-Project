@@ -26,7 +26,7 @@ export class ShoppingListService {
       //  for (let ingredient of ingredients) {
       //     this.addIngredient(ingredient);
       //   } 
-      // *** this is just another soluotion.
+      // *** this is just another solution.
 
       this.ingredients.push(...ingredients);
       this.ingredientsChanged.next(this.ingredients.slice())
