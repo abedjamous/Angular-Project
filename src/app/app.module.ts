@@ -3,6 +3,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 import { HeaderComponent } from './header/header.component';
 import { AppComponent } from './app.component';
@@ -35,7 +36,8 @@ import { RecipeService } from './recipes/recipe.service';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [ShoppingListService, RecipeService],
   bootstrap: [AppComponent]
