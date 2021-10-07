@@ -2,6 +2,7 @@ import { ShoppingListService } from './shopping-list.service';
 import { Ingredient } from './../shared/ingredient.model';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { LoggingService } from '../logging.service';
 
 @Component({
   selector: 'app-shopping-list',
@@ -13,7 +14,7 @@ ingredients: Ingredient[];
 private igChangeSub: Subscription;
 
 
-  constructor(private slService: ShoppingListService) { }
+  constructor(private slService: ShoppingListService, private loggingService: LoggingService) { }
 
   ngOnInit(){
     this.ingredients = this.slService.getIngredients();
@@ -23,6 +24,9 @@ private igChangeSub: Subscription;
         this.ingredients = ingredients;
       }
     );
+
+      this.loggingService.printLog('Hello From ShoppingList Component on NgOnInit');
+
   }
 
   onEditItem(index: number) {
